@@ -6,4 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+users = []
+5.times do
+  users<<User.create(name: Faker::Name.first_name)
+end
+
+5.times do
+  Event.create(location: Faker::Address.street_name, date: Faker::Date.forward(days: 23), 
+  creator_id: users.sample.id)
+end
+
+5.times do |i|
+  EventSubscribing.create(event_attendee_id:User.first.id, attendend_event_id: i)
+end
 
