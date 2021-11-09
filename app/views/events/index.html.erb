@@ -1,2 +1,13 @@
 <h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div>
+  <ul>
+    <%@events.each do |event| %>
+      <li>
+        <p><%=event.location%></p>
+        <p><%=event.date%></p>
+        <p class='m-3'><%=event.creator.name%></p>
+        </li>
+    <%end%>
+  </ul>
+</div>
+
