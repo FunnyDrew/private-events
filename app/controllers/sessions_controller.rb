@@ -1,6 +1,12 @@
 class SessionsController < ApplicationController
     def into
-    end
-
-    def
+        user = User.find_by(name: params[:name])
+        if user
+            session[:user_id] = user.id 
+            redirect_to root_path
+        else
+            flash[:errors] = ["Wrong name of registered user"]
+            render sessions_login_path
+        end
+    end    
 end
