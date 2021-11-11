@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+           <%=link_to "Home", root_path, class: "nav-link"%>
         </li>
         <li class="nav-item">
           <%=link_to "Login", sessions_login_path, class: "nav-link"%>
@@ -23,6 +23,3 @@
     </div>
   </div>
 </nav>
-<div>
-  <%=flash[:errors]%>
-</div>

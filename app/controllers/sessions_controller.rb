@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id 
             redirect_to root_path
         else
-            flash[:errors] = ["Wrong name of registered user"]
+            flash[:error] = "Wrong name of registered user"
             render sessions_login_path
         end
     end    

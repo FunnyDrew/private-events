@@ -13,6 +13,9 @@
   <body>
     <div class='container'>
       <%=render partial: 'partials/navbar' %>
+      <div>
+        <%=flash[:error]%>
+      </div>
       <%= yield %>
     </div>
   </body>
