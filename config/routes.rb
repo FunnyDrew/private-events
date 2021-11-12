@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   post "sessions/login", to: "sessions#into"
   get "sessions/sign_up", to: "sessions#sign_up"
 
-  resources :user
+  resources :users
   
 end
