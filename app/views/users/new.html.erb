@@ -1,5 +1,6 @@
 <h1>Sign Up<h1>
-<%= form_with model: user%>
-<%=form.label "Username", :name%>
-<%=form.initial :name%>
+<%= form_with model: @user do |form|%>
+<%=form.label :name, "Username"%>
+<%=form.text_field :name%>
 <%=form.submit  "Sign Up"%>
+<%end%>
