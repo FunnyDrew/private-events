@@ -8,5 +8,10 @@ class SessionsController < ApplicationController
             flash[:error] = "Wrong name of registered user"
             render sessions_login_path
         end
-    end    
+    end
+
+    def logout
+        session[:user_id] = nil
+        redirect_to root_path
+    end
 end
