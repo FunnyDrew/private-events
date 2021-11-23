@@ -5,7 +5,11 @@
       <li>
         <p><%=event.location%></p>
         <p><%=event.date%></p>
-        <p class='m-3'><%=event.creator.name%></p>
+        <p class='m-3'><%=event.creator.name%>
+        <%if @loged %>
+        <%=link_to "Show Event", event_path(event.id), class: 'btn btn-outline-primary m-3' %>
+        <%end%>
+        </p>
         </li>
     <%end%>
   </ul>

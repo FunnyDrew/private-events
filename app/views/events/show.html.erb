@@ -1,0 +1,18 @@
+<p><%=@event[:location]%></p>
+<p><%=@creator%></p>
+<ul><%@attendees.each do |person|%>
+  <li><%=person.name%></li>
+  <%end%>
+</ul>
+<p><%=session[:user_id]%></p>
+<p>
+  <% if @subscribed %>
+  <%= "Subscribed"%>
+  <%else%>
+  <%= "Not subscribed"%>
+  <%=link_to "Subscribe", event_subscribings_path({event_id: @event.id}), method: 'post', class: 'btn btn-outline-primary m-3'%>
+  <%end%>
+</p>
+<p>
+
+</p>
