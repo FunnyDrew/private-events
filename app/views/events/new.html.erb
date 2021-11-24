@@ -1,0 +1,9 @@
+<p>New events from <mark><%=@user%></mark> will be here</p>
+<p><%=flash[:errors]%></p>
+<%= form_with model: @event do |form|%>
+<%=form.label :location, "Location"%>
+<%=form.text_field :location%>
+<%=form.label :date, "Date for Event"%>
+<%=form.date_field :date%>
+<%=form.submit  "Create Event"%>
+<%end%>

@@ -1,9 +1,27 @@
 class EventsController < ApplicationController
 
   before_action :loged_in?, only: :show
+  def create
+    @event = Event.new(location: params[:event][:location], 
+    date: params[:event][:date], creator_id: session[:user_id])
+    if @event.save
+      redirect_to root_path
+    else 
+      flash[:error] = @event.errors.full_messages
+      render new_event_path
+    end
+      
+  end
+
   def index
     @events = Event.all  
     @loged = loged_in?  
+  end
+
+  def new
+    @loged = loged_in?
+    @user = User.find(session[:user_id]).name
+    @event = Event.new()
   end
 
   def show
@@ -22,4 +40,5 @@ class EventsController < ApplicationController
   def user_subscribed?
     !@attendees.select{|user| user[:id] == session[:user_id]}.empty?
   end
+  
 end
