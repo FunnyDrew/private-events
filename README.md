@@ -9,3 +9,5 @@ We want to build a site similar to a private [Eventbrite]() which allows users t
 * Events take place at a specific date and at a location (which you can just store as a string, like “Andy’s House”).
 
 [The Odin Project Rails Curiculum Part]()
+
+[Link to this App](https://mysterious-escarpment-02639.herokuapp.com/)
