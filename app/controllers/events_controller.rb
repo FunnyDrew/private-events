@@ -14,7 +14,8 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all  
+    @future_events = Event.future_events(Time.new).order(date: :desc)
+    @last_events = Event.last_events(Time.new).order(date: :desc)
     @loged = loged_in?  
   end
 
@@ -30,6 +31,12 @@ class EventsController < ApplicationController
     @attendees = @event.attendees.to_a
     @subscribed = user_subscribed?
 
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to users_path
   end
 
   private

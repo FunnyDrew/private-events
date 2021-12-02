@@ -19,7 +19,10 @@
         <li class="nav-item">
           <%button_activness = @loged ? "nav-link" : "nav-link disabled"%>
           <%=link_to "+Add Event", new_event_path, class: button_activness%>          
-        </li>        
+        </li>
+        <li class="nav-item">          
+          <%=link_to "User Page", users_path, class: button_activness%>          
+        </li>                
       </ul>
     </div>
   </div>

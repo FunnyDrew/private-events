@@ -1,10 +1,11 @@
-<p><%=@event[:location]%></p>
-<p><%=@creator%></p>
+<p><strong>Event Location: </strong><%=@event[:location]%></p>
+<p><strong>Event Date: </strong><%=@event[:date]%></p>
+<p><strong>Created By: </strong><%=@creator%></p>
+<h3>Subscribed to this event</h3>
 <ul><%@attendees.each do |person|%>
   <li><%=person.name%></li>
   <%end%>
 </ul>
-<p><%=session[:user_id]%></p>
 <p>
   <% if @subscribed %>
   <%= "Subscribed"%>

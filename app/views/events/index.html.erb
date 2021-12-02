@@ -1,11 +1,12 @@
 <h1>Events#index</h1>
 <div>
+  <h3>Future Events</h3>
   <ul>
-    <%@events.each do |event| %>
+    <%@future_events.each do |event| %>
       <li>
-        <p><%=event.location%></p>
-        <p><%=event.date%></p>
-        <p class='m-3'><%=event.creator.name%>
+        <p><strong>Place: </strong><%=event.location%></p>
+        <p><strong>Event Date: </strong><%=event.date%></p>
+        <p class='m-3'><strong>Created By: </strong><%=event.creator.name%>
         <%if @loged %>
         <%=link_to "Show Event", event_path(event.id), class: 'btn btn-outline-primary m-3' %>
         <%end%>
@@ -14,7 +15,19 @@
     <%end%>
   </ul>
 </div>
-<p><%=@loged%></p>
-
-
-
+<div>
+  <h3>Last Events</h3>
+  <ul>
+    <%@last_events.each do |event| %>
+      <li>
+        <p><strong>Place: </strong><%=event.location%></p>
+        <p><strong>Event Date: </strong><%=event.date%></p>
+        <p class='m-3'><strong>Created By: </strong><%=event.creator.name%>
+        <%if @loged %>
+        <%=link_to "Show Event", event_path(event.id), class: 'btn btn-outline-primary m-3' %>
+        <%end%>
+        </p>
+        </li>
+    <%end%>
+  </ul>
+</div>
